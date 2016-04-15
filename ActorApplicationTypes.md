@@ -1,23 +1,25 @@
 # Broadcast
 
-> Broadcast is a strategy where messages are sent to all instances of the actor the router controls.
+> Broadcast is a strategy where messages are sent to all instances of the actor (that) the router controls.
 
-ブロードキャストはメッセージが全てのアクターインスタンスのルータコントロールに送られる戦略です。
+ブロードキャストはルーターの支配する全てのアクターインスタンスにメッセージが送られる戦略です。
 
 > It's good for distributing work to multiple nodes that may have different tasks to perform the same work, in case any failures occur.
 
-それは複数のノードの分散作業にいいことです。同じ作業を行うために異なるタスクを持つかもしれない。場合によっては何か障害を起こす。
+それは、ある一つの(同じ)動作を実現させるために異なるタスクを持つかもしれない複数のノードへ、仕事を分散させるのにはよい先約です、まあたまには障害が起きるけど。
 
 
-> Since all routees under the router will recive the message, their mailboxes should theoretically be equally full/empty.
+> Since [all routees under the router] will recieve the message, their mailboxes should theoretically be equally full/empty.
 
-ルーターの下の全てのルートはメッセージを受け取るので、それらのメールボックスは理論的には一杯か空になってるべきである。
+あるrouterの下につく全てのrouteeがメッセージを受け取るまで、理論的には(そのrouteeたちの)mailboxは等しくいっぱいか空になっているべきである。
 
 > The reality is that how you apply the dispatcher for fairness in message handling (by tuning the "throughput" configuration value) will determine this.
 
-現実は、あなたがどのようにメッセージハンドリングで公正にディスパッチャーを適用するか(スループットの設定値の調整によって)が、それ(一個前の文)を決定する。
+現実は、いかにしてメッセージハンドリングにおける公正さのもと分配を適用させるか(どのようにスループットの値をチューニングするか)、という方法の難しさが、これ(この理論が成り立つかどうか)を決定する。
 
-> Try not to think of routers where the work is distributed evenly spread but could still occur in each routee at varying times.
+-- ここまで --
+
+> Try not to think of routers where the work is distributed evenly but could still occur in each routee at varying times.
 
 作業が均等に広がり分散されるルーターについて考えないようにしてみましょう、しかし、まだそれぞれのルートで様々な時間に発生する可能性がある。(何が発生するのか？)
 
