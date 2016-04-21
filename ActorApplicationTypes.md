@@ -31,11 +31,11 @@
 
 > This is a strategy where messages are sent to all instances of the actor the router controls, but only the first response from any of them is handled.
 
-これはメッセージが全てのアクターインスタンスのルータコントロールに送られる戦略ですが、それらのどれかから最初にレスポンスを返したやつが扱いします。
+これ(ScatterGatherFirstCompletedOf)はメッセージが全てのアクターインスタンスのルータコントロールに送られる戦略ですが、それらの中で最初にレスポンスを返したルータに扱われます。
 
 > This is good for situations where you need a response quickly and want to ask multiple handlers to try to do it for you.
 
-これはあなたがあなたのためにそれをやってみるために素早いレスポンスを必要として複数のハンドラに依頼したい状況で有効です。
+これ(ScatterGatherFirstCompletedOf)は、素早いレスポンスを必要とする場面や、あなたのためにそれ(?)をやってみる複数のハンドラに依頼したい状況で有効です。
 
 > In this way, you don't have to worry about which routee has the least amount of work to do, or even if it has the fewest tasks queued, since those tasks won't take longer than another routee that already has more messages to handle.
 
